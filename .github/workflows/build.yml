@@ -41,4 +41,8 @@ jobs:
         with:
           access_token: ${{ secrets.LINE_ACCESS_TOKEN }}
           message: |
-            Build ${{ github.event.repository.name }} ${{ github.head_ref || github.ref_name }} ${{ github.event.head_commit.message }} ${{ github.event.pusher.name }}
+            Build |
+            project: ${{ github.event.repository.name }} |
+            branch: ${{ github.head_ref || github.ref_name }} |
+            commit: ${{ github.event.head_commit.message }} |
+            by: ${{ github.event.pusher.name }}
